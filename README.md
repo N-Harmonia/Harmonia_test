@@ -9,6 +9,8 @@
 [![Hydra](https://img.shields.io/badge/Config-Hydra-89B8CD)](https://hydra.cc/)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green)](LICENSE)
 
+[Original paper](https://doi.org/10.1016/j.patcog.2026.113874) · [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0031320326008393)
+
 GeoRL turns token allocation into a sequential decision problem. A lightweight PPO policy inspects each region of a remote-sensing image and chooses the token budget that best matches its information density.
 
 </div>
