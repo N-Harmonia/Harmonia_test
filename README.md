@@ -49,6 +49,36 @@ flowchart LR
 
 The default 512 × 512 setup divides the image into 1,024 candidate regions. The policy selects one of four actions for each region. The resulting token stream is passed to a frozen vision foundation model adapter and a task-specific head.
 
+## Visual overview
+
+The figures below summarize the GeoRL architecture, experimental design, adaptive token allocation, and qualitative comparisons.
+
+<p align="center">
+  <img src="assets/pipeline.png" alt="GeoRL end-to-end pipeline" width="100%">
+</p>
+<p align="center"><em>End-to-end pipeline from information-density analysis to adaptive tokens, PPO feedback, HSA explanations, and downstream task heads.</em></p>
+
+<p align="center">
+  <img src="assets/framework.png" alt="GeoRL framework architecture" width="100%">
+</p>
+<p align="center"><em>GeoRL framework with the three-branch state encoder, policy network, action space, reward design, adaptive tokenizer, and HSA module.</em></p>
+
+<p align="center">
+  <img src="assets/experiments.png" alt="GeoRL experimental design and testing pipeline" width="100%">
+</p>
+<p align="center"><em>Experimental design across DOTA, iSAID, LoveDA, xView, cross-modal inputs, ablations, efficiency evaluation, and HSA interpretation.</em></p>
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/comparison.png" alt="Uniform versus GeoRL adaptive tokenization comparison" width="100%"></td>
+    <td width="50%"><img src="assets/visualization.png" alt="GeoRL qualitative results and token allocation visualization" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Uniform tokenization versus GeoRL adaptive tokenization.</em></td>
+    <td align="center"><em>Qualitative task results and token-allocation visualizations.</em></td>
+  </tr>
+</table>
+
 ## Repository status
 
 This repository is the code release accompanying the GeoRL manuscript. It includes the model, PPO objective, HSA module, configuration system, dataset adapters, evaluation utilities, tests, and CI workflow.
