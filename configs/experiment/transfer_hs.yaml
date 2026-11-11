@@ -1,0 +1,16 @@
+defaults:
+  - main_loveda
+  - _self_
+
+name: transfer_hs
+model:
+  in_channels: 224
+  num_classes: 7
+data:
+  name: hs
+  root: data/aviris
+  batch_size: 4
+  extra:
+    bands: 224
+transfer:
+  freeze_policy: true

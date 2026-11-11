@@ -1,0 +1,59 @@
+# for unit-test smoke only; do not use for reporting
+name: smoke
+optim:
+  name: adamw
+  lr: 1.0e-3
+  weight_decay: 0.0
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  grad_clip: 0.5
+scheduler:
+  name: cosine
+  warmup_steps: 0
+  total_steps: 4
+  min_lr_factor: 0.5
+reward:
+  alpha: 1.0
+  beta: 0.3
+  lam: 0.0
+  n_max: 16
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  ppo_epochs: 1
+  minibatch_size: 4
+model:
+  state_encoder_dim: 32
+  transformer_blocks: 1
+  transformer_heads: 2
+  transformer_ffn: 64
+  transformer_dropout: 0.0
+  base_patch: 16
+  num_regions: 4
+  image_size: 32
+  vfm: sam_vit_b
+  num_classes: 4
+  head: classification
+  in_channels: 3
+data:
+  name: synthetic
+  root: data/_smoke
+  split: train
+  num_workers: 0
+  batch_size: 2
+  image_size: 32
+  extra: {}
+train:
+  epochs: 1
+  iterations_per_epoch: 2
+  seed: 0
+  amp: false
+  grad_accum: 1
+  log_interval: 1
+  eval_interval: 100
+  ckpt_dir: ckpts
+  ckpt_keep_last: 1
+  ema_decay: 0.0
+  deterministic: true

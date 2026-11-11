@@ -1,0 +1,4 @@
+vfm: sam_vit_b
+base_patch: 16
+image_size: 512
+num_regions: 1024

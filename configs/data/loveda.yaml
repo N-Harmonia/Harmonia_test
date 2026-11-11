@@ -1,0 +1,8 @@
+name: loveda
+root: data/loveda
+split: Train
+num_workers: 4
+batch_size: 8
+image_size: 512
+extra:
+  scene: urban

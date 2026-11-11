@@ -1,0 +1,16 @@
+defaults:
+  - main_loveda
+  - _self_
+
+name: transfer_ms
+model:
+  in_channels: 10
+  num_classes: 7
+data:
+  name: ms
+  root: data/sentinel2
+  batch_size: 8
+  extra:
+    bands: 10
+transfer:
+  freeze_policy: true

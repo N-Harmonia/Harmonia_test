@@ -1,0 +1,4 @@
+vfm: satmae_vit_l16
+base_patch: 16
+image_size: 512
+num_regions: 1024

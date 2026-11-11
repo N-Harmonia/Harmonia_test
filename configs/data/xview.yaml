@@ -1,0 +1,8 @@
+name: xview
+root: data/xview
+split: train
+num_workers: 4
+batch_size: 8
+image_size: 512
+extra:
+  annotation_file: xView_train.geojson

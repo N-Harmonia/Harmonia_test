@@ -1,0 +1,6 @@
+name: scene_patternnet
+root: data/PatternNet
+split: train
+num_workers: 4
+batch_size: 16
+image_size: 512

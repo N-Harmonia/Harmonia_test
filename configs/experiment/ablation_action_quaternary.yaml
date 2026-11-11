@@ -1,0 +1,7 @@
+defaults:
+  - main_dota
+  - _self_
+
+name: ablation_action_quaternary
+ablation:
+  action_set: [fine, medium, coarse, skip]

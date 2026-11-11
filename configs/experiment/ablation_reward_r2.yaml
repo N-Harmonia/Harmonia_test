@@ -1,0 +1,9 @@
+defaults:
+  - main_dota
+  - _self_
+
+name: ablation_reward_r2
+reward:
+  alpha: 1.0
+  beta: 0.3
+  lam: 0.1

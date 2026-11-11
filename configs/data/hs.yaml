@@ -1,0 +1,8 @@
+name: hs
+root: data/aviris
+split: train
+num_workers: 4
+batch_size: 4
+image_size: 512
+extra:
+  bands: 224

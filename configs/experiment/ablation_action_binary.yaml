@@ -1,0 +1,7 @@
+defaults:
+  - main_dota
+  - _self_
+
+name: ablation_action_binary
+ablation:
+  action_set: [fine, skip]

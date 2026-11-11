@@ -1,0 +1,6 @@
+name: scene_aid
+root: data/AID
+split: train
+num_workers: 4
+batch_size: 16
+image_size: 512

@@ -1,0 +1,8 @@
+defaults:
+  - main_dota
+  - _self_
+
+name: ablation_uniform
+ablation:
+  uniform_tokens: true
+  uniform_action: fine

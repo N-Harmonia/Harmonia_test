@@ -1,0 +1,3 @@
+state_encoder_dim: 256
+in_channels: 3
+num_regions: 1024

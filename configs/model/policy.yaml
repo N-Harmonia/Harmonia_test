@@ -1,0 +1,4 @@
+transformer_blocks: 4
+transformer_heads: 4
+transformer_ffn: 1024
+transformer_dropout: 0.1

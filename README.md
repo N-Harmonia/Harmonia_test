@@ -216,4 +216,3 @@ docker run --gpus all -v ${PWD}/data:/workspace/data georl:latest experiment=_sm
 ## License
 
 The source code is released under the Apache License 2.0. Dataset licenses and access conditions are governed by the individual dataset providers.
-

@@ -1,0 +1,8 @@
+defaults:
+  - main_dota
+  - _self_
+
+name: ablation_action_continuous
+ablation:
+  action_space: continuous
+  action_dim: 1

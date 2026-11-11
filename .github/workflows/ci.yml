@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install ruff==0.5.0 black==24.4.2 isort==5.13.2
+      - run: ruff check .
+      - run: black --check .
+      - run: isort --check-only --profile black .
+
+  typecheck:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.3.1
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pip install mypy==1.10.0
+      - run: mypy --strict src/georl
+
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.3.1 torchvision==0.18.1
+      - run: python -m pip install -r requirements.txt pytest==8.2.2 pytest-cov==5.0.0
+      - run: python -m pip install -e .
+      - run: pytest -q -m "not slow"

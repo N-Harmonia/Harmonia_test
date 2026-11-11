@@ -1,0 +1,16 @@
+defaults:
+  - main_loveda
+  - _self_
+
+name: transfer_sar
+model:
+  in_channels: 2
+  num_classes: 7
+data:
+  name: sar
+  root: data/sentinel1
+  batch_size: 8
+  extra:
+    expected_bands: 2
+transfer:
+  freeze_policy: true

@@ -1,0 +1,6 @@
+name: isaid
+root: data/isaid
+split: train
+num_workers: 4
+batch_size: 8
+image_size: 512
